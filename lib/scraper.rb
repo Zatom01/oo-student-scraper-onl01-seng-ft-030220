@@ -6,7 +6,7 @@ url="https://learn-co-curriculum.github.io/student-scraper-test-page/index.html"
 
 class Scraper
 
-  @@arr=[]
+  @@scraped_students=[]
 
   def self.scrape_index_page(index_url)
     
@@ -24,12 +24,12 @@ class Scraper
       :location=>each.css('p.student-location').text,
       :profile_url=>"students/"+each.css('h4.student-name').text.split(" ").join("-")+".html"}
 
-      @@arr << @profile
+      @@scraped_students << @profile
 
     end
 
     
-    return @@arr
+    return @@scraped_students
   end
 
 
