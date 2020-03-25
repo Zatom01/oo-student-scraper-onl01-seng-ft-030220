@@ -23,7 +23,7 @@ class Scraper
     profile={}
     doc=Nokogiri::HTML(open(profile_url))
     doc.css('div.social-icon-container a').each do |each|
-      link=each.
+      link=each.attr('href')
       profile[:twitter] ==
     
     
