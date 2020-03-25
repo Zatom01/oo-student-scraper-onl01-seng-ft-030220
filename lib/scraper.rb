@@ -32,6 +32,7 @@ class Scraper
     end
     
     profile[:quote]=doc.css('div.profile-quote').text
+    profile[:bio]=
     
     
       
