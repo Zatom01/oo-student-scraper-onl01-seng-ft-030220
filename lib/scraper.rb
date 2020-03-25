@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'pry'
 
 
-class Scraperlear
+class Scraper
   def scrape_index_page(url)
     index_page = Nokogiri::HTML(open(index_url))
     students = []
