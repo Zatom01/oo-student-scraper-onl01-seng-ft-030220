@@ -27,7 +27,7 @@ class Scraper
       profile[:twitter] = link if link.include?('twitter')
       profile[:linkedin] = link if link.include?('linkedin')
       profile[:github] = link if link.include?('github')
-      profile[:twitter] = link if link.include?('twitter')
+      profile[:blod] = link if link.include?('twitter')
       
     
     
