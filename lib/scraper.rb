@@ -29,6 +29,12 @@ class Scraper
       profile[:github] = link if link.include?('github')
       profile[:blog] = link if link.css('img').attribute('src').include?('icon')
       
+    end
+    
+    profile[:quote]=doc.css('')
+    
+    
+      
     
     
   end 
