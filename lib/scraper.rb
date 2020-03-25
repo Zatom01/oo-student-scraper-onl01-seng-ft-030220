@@ -2,9 +2,10 @@ require 'open-uri'
 require 'nokogiri'
 require 'pry'
 
-# url="https://learn-co-curriculum.github.io/student-scraper-test-page/index.html"
 
 class Scraper
+  
+  index_url="https://learn-co-curriculum.github.io/student-scraper-test-page/index.html"
   index_page = Nokogiri::HTML(open(index_url))
   students = []
   index_page.css("div.roster-cards-container").each do |card|
