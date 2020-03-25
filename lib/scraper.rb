@@ -31,7 +31,7 @@ class Scraper
       
     end
     
-    profile[:quote]=doc.css('')
+    profile[:quote]=doc.css('div.profile-quote').text
     
     
       
