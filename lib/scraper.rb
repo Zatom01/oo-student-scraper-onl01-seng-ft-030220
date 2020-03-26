@@ -27,7 +27,7 @@ class Scraper
       profile[:twitter] = link if link.include?('twitter')
       profile[:linkedin] = link if link.include?('linkedin')
       profile[:github] = link if link.include?('github')
-      profile[:blog] = link if link.css('img').attribute('src').include?('icon')
+      profile[:blog] = link if each.css('img').attribute('src').include?('icon')
       
     end
     
