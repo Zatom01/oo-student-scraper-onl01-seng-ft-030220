@@ -25,9 +25,9 @@ class Scraper
     doc.css('div.social-icon-container a').each do |each|
       link=each.attr('href')
       profile[:twitter] = link.value if link.value.include?('twitter')
-      profile[:linkedin] = link.value if link.include?('linkedin')
-      profile[:github] = link.value if link.include?('github')
-      profile[:blog] = link.value if each.css('img').attribute('src').include?('rss')
+      profile[:linkedin] = link.value if link.value.include?('linkedin')
+      profile[:github] = link.value if link.value.include?('github')
+      profile[:blog] = link.value if each.css('img').attribute('src').text.include?('rss')
       
     end
     
