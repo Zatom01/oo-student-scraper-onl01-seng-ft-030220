@@ -38,24 +38,8 @@ class Scraper
     profile[:bio] = doc.css("div.main-wrapper.profile .description-holder p").text
 
     profile
-      
-    end
-    
-    profile[:quote]=doc.css('div.profile-quote').text
-    profile[:bio]=doc.css('p').text
-    
-    profile 
-    
-    
-      
-    
     
   end 
-
-  
-  
-
-  
 end 
 
     
