@@ -22,22 +22,22 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profile={}
     doc=Nokogiri::HTML(open(profile_url))
-    doc.css("div.main-wrapper.profile .social-icon-container a").each do |social|
-      if social.attribute("href").value.include?("twitter")
-        student_profile[:twitter] = social.attribute("href").value
-      elsif social.attribute("href").value.include?("linkedin")
-        student_profile[:linkedin] = social.attribute("href").value
-      elsif social.attribute("href").value.include?("github")
-        student_profile[:github] = social.attribute("href").value
+    doc.css("div.social-icon-container a").each do |link|
+      if link.attribute("href").value.include?("twitter")
+        profile[:twitter] = link.attribute("href").value
+      elsif link.attribute("href").value.include?("linkedin")
+        profile[:linkedin] = link.attribute("href").value
+      elsif link.attribute("href").value.include?("github")
+        profile[:github] = link.attribute("href").value
       else
-        student_profile[:blog] = social.attribute("href").value
+        profile[:blog] = link.attribute("href").value
       end
     end
 
-    student_profile[:profile_quote] = profile.css("div.main-wrapper.profile .vitals-text-container .profile-quote").text
-    student_profile[:bio] = profile.css("div.main-wrapper.profile .description-holder p").text
+    profile[:profile_quote] = doc.css("div.main-wrapper.profile .vitals-text-container .profile-quote").text
+    profile[:bio] = doc.css("div.main-wrapper.profile .description-holder p").text
 
-    student_profile
+    profile
       
     end
     
